@@ -1,5 +1,21 @@
 import { Col, Container, Nav, Row, Tab } from 'react-bootstrap';
-import projIm1 from '../assets/img/project-img1.png';
+import gym from '../assets/img/gym.png';
+import takeaway from '../assets/img/Takeaway.png';
+import sociopedia from '../assets/img/sociopedia.png';
+import moview from '../assets/img/Moview.png';
+import architect from '../assets/img/architect.png';
+import astute from '../assets/img/astute.png';
+import auscraft from '../assets/img/auscraft.png';
+import blackfog from '../assets/img/blackfog.png';
+import bodywork from '../assets/img/bodywork.png';
+import CMC from '../assets/img/CMC.png';
+import compass from '../assets/img/compass.png';
+import earrelief from '../assets/img/earrelief.png';
+import elitegym from '../assets/img/elitegym.png';
+import maxmise from '../assets/img/maxmise.png';
+import medirecord from '../assets/img/medirecords.png';
+import myownvet from '../assets/img/myownvet.png';
+import SBO from '../assets/img/SBO.png';
 import { ProjectCard } from './ProjectCard';
 import colorSharp2 from '../assets/img/color-sharp2.png';
 
@@ -8,32 +24,96 @@ export const Projects = () => {
     {
       title: "TakeAway Platform",
       description: "Website Design & Developemnt",
-      imgUrl: projIm1,
+      imgUrl: takeaway,
     },
     {
       title: "Gym Website",
       description: "Website Design & Developemnt",
-      imgUrl: projIm1,
+      imgUrl: gym,
     },
     {
       title: "Sociopedia",
       description: "Website Design & Developemnt",
-      imgUrl: projIm1,
+      imgUrl: sociopedia,
     },
     {
-      title: "Personal Portfolio",
+      title: "BlackFog",
       description: "Website Design & Developemnt",
-      imgUrl: projIm1,
+      imgUrl: blackfog,
     },
     {
-      title: "E-commerce website",
+      title: "ASHCROFT ARCHITECT",
       description: "Website Design & Developemnt",
-      imgUrl: projIm1,
+      imgUrl: architect,
     },
     {
       title: "Moview",
       description: "Website Design & Developemnt",
-      imgUrl: projIm1,
+      imgUrl: moview,
+    },
+  ];
+  const projects1 = [
+    {
+      title: "MyOwnVet",
+      description: "Website Design & Developemnt",
+      imgUrl: myownvet,
+    },
+    {
+      title: "MediRecords",
+      description: "Website Design & Developemnt",
+      imgUrl: medirecord,
+    },
+    {
+      title: "EarRelief",
+      description: "Website Design & Developemnt",
+      imgUrl: earrelief,
+    },
+    {
+      title: "SUSTAINABILITY COMPASS",
+      description: "Website Design & Developemnt",
+      imgUrl: compass,
+    },
+    {
+      title: "CMC ELECTRICAL & COMMUNICATION",
+      description: "Website Design & Developemnt",
+      imgUrl: CMC,
+    },
+    {
+      title: "SBO",
+      description: "Website Design & Developemnt",
+      imgUrl: SBO,
+    },
+  ];
+  const projects2 = [
+    {
+      title: "Elite Performance Gym",
+      description: "Website Design & Developemnt",
+      imgUrl: elitegym,
+    },
+    {
+      title: "BlackFog",
+      description: "Website Design & Developemnt",
+      imgUrl: blackfog,
+    },
+    {
+      title: "Astute Realty",
+      description: "Website Design & Developemnt",
+      imgUrl: astute,
+    },
+    {
+      title: "ASHCROFT ARCHITECT",
+      description: "Website Design & Developemnt",
+      imgUrl: architect,
+    },
+    {
+      title: "Auscraft Kitchen",
+      description: "Website Design & Developemnt",
+      imgUrl: auscraft,
+    },
+    {
+      title: "Moview",
+      description: "Website Design & Developemnt",
+      imgUrl: moview,
     },
   ];
 
@@ -69,10 +149,26 @@ export const Projects = () => {
                   </Row>
                 </Tab.Pane>
                 <Tab.Pane eventKey="second">
-                  Content
+                  <Row>
+                    {
+                      projects1.map((project, index) => {
+                        return (
+                          <ProjectCard key={index} {...project}/>
+                        )
+                      })
+                    }
+                  </Row>
                 </Tab.Pane>
                 <Tab.Pane eventKey="third">
-                  Content
+                  <Row>
+                    {
+                      projects2.map((project, index) => {
+                        return (
+                          <ProjectCard key={index} {...project}/>
+                        )
+                      })
+                    }
+                  </Row>
                 </Tab.Pane>
               </Tab.Content>
             </Tab.Container>

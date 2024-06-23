@@ -4,6 +4,9 @@ import headerImg from "../assets/img/header-img.svg";
 import { useEffect, useState } from "react";
 import { HashLink } from 'react-router-hash-link';
 import {BrowserRouter as Router} from "react-router-dom";
+import 'animate.css';
+import TrackVisibility from "react-on-screen";
+import { isVisible } from "@testing-library/user-event/dist/utils";
 
 export const Banner = () => {
   const [loopNum, setLoppNum] = useState(0);
@@ -48,16 +51,21 @@ export const Banner = () => {
         <Container>
           <Row className="align-items-center">
             <Col xs={12} md={6} xl={7}>
-              <span className="tagline">
-                Welcome to my Portfolio!
-              </span>
-              <h1>{`Hi! I'm Jim. `}<br /><span className="wrap">{text}</span></h1>
-              <p>Dynamic IT professional with a Master of Information and Technology from the University of Queensland
-                and a Bachelor of Science Degree in Mathematics from Michigan State University. Skilled in software and
-                web development with expertise in React, Python, Java, and cloud computing platforms like AWS and Azure.</p>
-              <HashLink to="#contact" style={{textDecoration:'none'}}>
-                <button onCanPlay={() => {}}>Let's Connect! <ArrowRightCircle size={25} /></button>
-              </HashLink>
+              <TrackVisibility>
+              {({ isVisible }) => 
+                <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
+                  <span className="tagline">
+                    Welcome to my Portfolio!
+                  </span>
+                  <h1>{`Hi! I'm Jim. `}<br /><span className="wrap">{text}</span></h1>
+                  <p>Dynamic IT professional with a Master of Information and Technology from the University of Queensland
+                    and a Bachelor of Science Degree in Mathematics from Michigan State University. Skilled in software and
+                    web development with expertise in React, Python, Java, and cloud computing platforms like AWS and Azure.</p>
+                  <HashLink to="#contact" style={{textDecoration:'none'}}>
+                    <button onCanPlay={() => {}}>Let's Connect! <ArrowRightCircle size={25} /></button>
+                  </HashLink>
+                </div>}
+              </TrackVisibility>
             </Col>
             <Col xs={12} md={6} xl={5}>
               <img src={headerImg} alt="Header Img" />
