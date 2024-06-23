@@ -38,7 +38,7 @@ export const Projects = () => {
   ];
 
   return (
-    <section className='project' id='projct'>
+    <section className='project' id='project'>
       <Container>
         <Row>
           <Col>
